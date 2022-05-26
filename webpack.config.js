@@ -10,8 +10,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-    entry: path.resolve(__dirname, 'dist'),
-    filename: './dist/bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.js'],
@@ -25,7 +25,7 @@ module.exports = {
     }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
