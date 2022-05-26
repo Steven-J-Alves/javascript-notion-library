@@ -1,4 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -7,24 +10,32 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
+    entry: path.resolve(__dirname, 'dist'),
     filename: './dist/bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js'],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public', 'index.html'),
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-      }
-    ]
+      },
+    ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-  ],
-}
- 
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+  },
+};
