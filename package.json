@@ -5,6 +5,10 @@
   "repository": "git@github.com:Steven-J-Alves/javascript-twitter-library.git",
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=development webpack --color --progress --mode development",
+    "watch": "yarn build --watch"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
