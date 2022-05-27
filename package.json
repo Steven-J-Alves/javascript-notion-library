@@ -12,7 +12,8 @@
     "lint:fix": "eslint src/*.js --fix",
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
     "watch": "build --watch",
-    "test": "mocha tests/**/*.js"
+    "test": "mocha tests/**/*.js",
+    "test:tdd": "mocha tests/**/*.js --watch"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
