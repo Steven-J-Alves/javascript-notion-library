@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:mocha/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -14,6 +15,8 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'func-names': 'off',
+    'prefer-arrow-callback': 'off',
   },
   plugins: [
     'mocha',
