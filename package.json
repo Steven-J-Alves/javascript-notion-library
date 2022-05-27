@@ -12,21 +12,20 @@
     "lint:fix": "eslint src/*.js --fix",
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
     "watch": "build --watch",
-    "test": "mocha tests/**/*.js",
-    "test:tdd": "mocha tests/**/*.js --watch",
+    "test": "mocha tests/**/*.js --require @babel/register",
+    "test:tdd": "mocha tests/**/*.js --require @babel/register --watch",
     "test:coverage": "nyc && test"
   },
   "nyc": {
     "check-coverage": true,
     "lines": 80,
-    "functions": 80,
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "functions": 80
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
+    "@babel/register": "^7.17.7",
     "babel-loader": "^8.2.5",
     "chai": "^4.3.6",
     "cross-env": "^7.0.3",
