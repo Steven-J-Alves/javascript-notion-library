@@ -13,7 +13,7 @@
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
     "server": "cross-env NODE_ENV=development webpack serve --open --mode development",
     "watch": "build --watch",
-    "test": "echo test"
+    "test": "mocha tests/**/*.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
