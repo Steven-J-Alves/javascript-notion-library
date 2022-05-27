@@ -11,7 +11,6 @@
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
-    "server": "cross-env NODE_ENV=development webpack serve --open --mode development",
     "watch": "build --watch",
     "test": "mocha tests/**/*.js"
   },
