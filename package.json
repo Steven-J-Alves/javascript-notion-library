@@ -6,14 +6,22 @@
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepush": "lint",
+    "prepush": "lint && test:coverage",
     "prepare": "husky install",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
-    "server": "cross-env NODE_ENV=development webpack serve --open --mode development",
     "watch": "build --watch",
-    "test": "mocha tests/**/*.js"
+    "test": "mocha tests/**/*.js",
+    "test:tdd": "mocha tests/**/*.js --watch",
+    "test:coverage": "nyc && test"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -25,9 +33,10 @@
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "html-webpack-plugin": "^5.5.0",
+    "eslint-plugin-mocha": "^10.0.5",
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",

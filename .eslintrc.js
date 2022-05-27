@@ -1,10 +1,13 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: false,
     es2021: true,
+    node: true,
+    mocha: true,
   },
   extends: [
     'airbnb-base',
+    'plugin:mocha/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -12,5 +15,10 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'func-names': 'off',
+    'prefer-arrow-callback': 'off',
   },
+  plugins: [
+    'mocha',
+  ],
 };
