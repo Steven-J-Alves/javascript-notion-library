@@ -6,13 +6,13 @@
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepush": "yarn lint",
+    "prepare": "husky install",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
     "server": "cross-env NODE_ENV=development webpack serve --open --mode development",
     "watch": "yarn build --watch",
-    "prepare": "husky install",
-    "prepush": "yarn lint",
     "test": "echo test"
   },
   "devDependencies": {
