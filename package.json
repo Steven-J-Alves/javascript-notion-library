@@ -6,11 +6,12 @@
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clear": "rimraf lib",
     "prepush": "lint && test:coverage",
     "prepare": "husky install",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
-    "build": "cross-env NODE_ENV=production webpack --color --progress --mode production",
+    "build": "clear && babel --out-dir lib src",
     "watch": "build --watch",
     "test": "mocha tests/**/*.js --require @babel/register",
     "test:tdd": "mocha tests/**/*.js --require @babel/register --watch",
