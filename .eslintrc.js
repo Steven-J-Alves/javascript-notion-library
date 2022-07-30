@@ -16,7 +16,9 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'func-names': 'off',
-    'prefer-arrow-callback': 'off',
+    'prefer-arrow-callback': 'true',
+    'no-unused-expressions': 'off',
+    'no-mocha-arrows': 'off',
   },
   plugins: [
     'mocha',

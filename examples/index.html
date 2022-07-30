@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion App - Example</title>
+</head>
+<body>
+
+  <div id="page"></div>
+
+  <script src="../dist/notion-wrapper.umd.js"></script>
+  <script>
+    const notion = new NotionClient({
+      token: 'secret_fze6IaOKYoaSNLxVxlVMvwUm2SwjjmemWPWNlh51tLd',
+    });
+
+    const page = notion.page.getPage('755a94bba97e4ddd99f90c80afd0aed9');
+    const albumsEl = document.getElementById('page');
+
+    page.then(data => {
+      console.log(data);
+      markup = `<img src='${data.cover.external.url}' alt='${data.id}' /> <img src='${data.icon.external.url}' alt='${data.id}' />`
+      albumsEl.innerHTML = markup;
+    })
+
+  </script>
+</body>
+</html>
+

@@ -7,19 +7,21 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: 'eval-source-map',
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    // filename: 'bundle.js',
+    library: 'NotionClient',
+    libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js'],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-  ],
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  //   }),
+  // ],
   module: {
     rules: [
       {
