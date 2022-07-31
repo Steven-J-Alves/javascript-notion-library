@@ -13,7 +13,7 @@
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "watch": "build --watch",
-    "test": "mocha tests/**/*.js --require @babel/register",
+    "test": "mocha tests/**/*.ts --require @babel/register",
     "test:tdd": "mocha tests/**/*.js --require @babel/register --watch",
     "test:coverage": "nyc && test",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
@@ -54,6 +54,7 @@
     "sinon": "^14.0.0",
     "sinon-chai": "^3.7.0",
     "sinon-stub-promise": "^4.0.0",
+    "typescript": "^4.7.4",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   },

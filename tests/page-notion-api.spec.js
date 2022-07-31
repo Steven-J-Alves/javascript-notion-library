@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import NotionClient  from '../src/index.js';
+import NotionClient  from '../src/index';
 const notion = new NotionClient({})
 
 describe('Page', () => {

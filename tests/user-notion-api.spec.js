@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import fetch from 'node-fetch';
 global.fetch = fetch
 
-import NotionClient  from '../src/index.js';
+import NotionClient  from '../src/index';
 const notion = new NotionClient({})
 
 describe('User', () => {

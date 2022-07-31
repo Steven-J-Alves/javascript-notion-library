@@ -5,9 +5,30 @@ import user from './user-notion-api.js';
 import API_URL from './config/api.js';
 import toJSON from './utils/toJson.js';
 
-export default class NotionClient {
-  constructor(options) {
-    this.apiURL =  API_URL;
+interface optionsType {
+  token: string;
+  API_URL?: string;
+}
+
+interface requestOptions {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE',
+  headers: {
+    'Notion-Version': string,
+    Authorization: string,
+  }
+  body?: any
+}
+
+export default class NotionClient  {
+  apiURL: string;
+  token: string
+
+  page: (pageId: string) => Promise<any>;
+  search: (query: string) => Promise<any>;
+  user: (userId: string) => Promise<any>;
+
+  constructor(options: optionsType) {
+    this.apiURL =  options.API_URL || API_URL;
     this.token = options.token;
 
     this.page = page.bind(this)();
@@ -15,14 +36,14 @@ export default class NotionClient {
     this.user = user.bind(this)();
   }
 
-  request(url, query) {
-    let options = {
+  request(url: string, query: string) {
+    let options: requestOptions = {
       'method': 'GET',
       'headers': {
         'Notion-Version': '2022-02-22',
         'Authorization': 'Bearer secret_fze6IaOKYoaSNLxVxlVMvwUm2SwjjmemWPWNlh51tLd'
       }
-    };
+    }
 
     if (!query) {
       return fetch(url, options).then(toJSON)
