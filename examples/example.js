@@ -1,3 +1,4 @@
+// rodar no terminal ou html para testar
 import fetch from 'node-fetch';
 global.fetch = fetch
 

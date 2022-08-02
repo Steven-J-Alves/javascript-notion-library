@@ -10,20 +10,22 @@
 
   <div id="page"></div>
 
+  <!-- funciona -->
   <script src="../dist/notion-wrapper.umd.js"></script>
   <script>
-    const notion = new NotionClient({
-      token: 'secret_fze6IaOKYoaSNLxVxlVMvwUm2SwjjmemWPWNlh51tLd',
-    });
+    // functiona usar o dcima ou o abaixo
+    // const notion = new NotionClient({
+    //   token: 'secret_fze6IaOKYoaSNLxVxlVMvwUm2SwjjmemWPWNlh51tLd',
+    // });
 
-    const page = notion.page.getPage('755a94bba97e4ddd99f90c80afd0aed9');
-    const albumsEl = document.getElementById('page');
+    // const page = notion.page.getPage('755a94bba97e4ddd99f90c80afd0aed9');
+    // const albumsEl = document.getElementById('page');
 
-    page.then(data => {
-      console.log(data);
-      markup = `<img src='${data.cover.external.url}' alt='${data.id}' /> <img src='${data.icon.external.url}' alt='${data.id}' />`
-      albumsEl.innerHTML = markup;
-    })
+    // page.then(data => {
+    //   console.log(data);
+    //   markup = `<img src='${data.cover.external.url}' alt='${data.id}' /> <img src='${data.icon.external.url}' alt='${data.id}' />`
+    //   albumsEl.innerHTML = markup;
+    // })
 
   </script>
 </body>
