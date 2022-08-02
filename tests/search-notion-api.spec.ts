@@ -6,7 +6,7 @@ chai.use(sinonChai);
 sinonStubPromise(sinon);
 
 import fetch from 'node-fetch';
-global.fetch = fetch;
+global.fetch = fetch as any;
 
 import NotionClient  from '../src/index';
 
@@ -28,7 +28,6 @@ describe('Search', () => {
 
   describe('smoke tests', () => {
     it('should exits search method', () => {
-      // notion = new NotionClient({ token: 'foo' });
       expect(notion.search.global).to.exist;
     });
 

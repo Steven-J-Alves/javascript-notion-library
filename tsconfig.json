@@ -1,15 +1,24 @@
 {
+  "ts-node": { "compilerOptions": { "module": "ESNext", "types": ["node"] } },
   "compilerOptions": {
     "outDir": "./dist-ts",
-    "module": "commonjs",
+    "module": "ESNext",
+    "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "target": "esnext",
     "lib": ["esnext", "DOM", "DOM.Iterable", "WebWorker"],
     "alwaysStrict": true,
     "strict": true,
     "preserveConstEnums": true,
-    "moduleResolution": "node",
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noImplicitThis": false,
+    "types": [
+      "mocha",
+      "node"
+   ],
+   "typeRoots": [
+     "./node_modules/@types"
+   ]
   },
   "include": [
     "./src/*.ts",

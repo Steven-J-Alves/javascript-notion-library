@@ -1,9 +1,9 @@
-import page from './page-notion-api.js';
-import search from './search-notion-api.js';
-import user from './user-notion-api.js';
+import page from './page-notion-api';
+import search from './search-notion-api';
+import user from './user-notion-api';
 
-import API_URL from './config/api.js';
-import toJSON from './utils/toJson.js';
+import API_URL from './config/api';
+import toJSON from './utils/toJson';
 
 interface optionsType {
   token: string;
@@ -23,15 +23,24 @@ export default class NotionClient  {
   apiURL: string;
   token: string
 
-  page: (pageId: string) => Promise<any>;
-  search: (query: string) => Promise<any>;
-  user: (userId: string) => Promise<any>;
+  page: {
+    getPage: (id: any) => any;
+  }
+
+
+  search: {
+    global: (query: any) => any;
+  }
+
+  user: {
+    getUser: (id: any) => any;
+  }
 
   constructor(options: optionsType) {
     this.apiURL =  options.API_URL || API_URL;
     this.token = options.token;
 
-    this.page = page.bind(this)();
+    this.page = page.bind(this,"")();
     this.search = search.bind(this)();
     this.user = user.bind(this)();
   }

@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 
 import fetch from 'node-fetch';
-global.fetch = fetch
+global.fetch = fetch as any
 
 import NotionClient  from '../src/index';
-const notion = new NotionClient({})
+const notion = new NotionClient({token: 'foo'});
 
 describe('User', () => {
   describe('smoke tests', () => {
