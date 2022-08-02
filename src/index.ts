@@ -22,19 +22,9 @@ interface requestOptions {
 export default class NotionClient  {
   apiURL: string;
   token: string
-
-  page: {
-    getPage: (id: any) => any;
-  }
-
-
-  search: {
-    global: (query: any) => any;
-  }
-
-  user: {
-    getUser: (id: any) => any;
-  }
+  page: { getPage: (id: any) => any;}
+  search: { global: (query: any) => any;}
+  user: { getUser: (id: any) => any;}
 
   constructor(options: optionsType) {
     this.apiURL =  options.API_URL || API_URL;

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "./dist-ts",
     "module": "ESNext",
-    "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
+    "moduleResolution": "node",                    
     "target": "esnext",
     "lib": ["esnext", "DOM", "DOM.Iterable", "WebWorker"],
     "alwaysStrict": true,
