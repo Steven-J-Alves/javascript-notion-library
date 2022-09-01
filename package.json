@@ -13,7 +13,7 @@
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "watch": "build --watch",
-    "test": "mocha --require ts-node/register --esm --experimental-specifier-resolution=node --experimental-modules tests/**/*.ts",
+    "test": "cross-env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha -r ts-node/register **/*.spec.ts",
     "test:tdd": "mocha tests/**/*.js --watch",
     "test:coverage": "nyc && test",
     "build:ts": "tsc --traceResolution",

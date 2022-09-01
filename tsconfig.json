@@ -1,10 +1,10 @@
 {
-  "ts-node": { "compilerOptions": { "module": "ESNext", "types": ["node"] } },
+  "ts-node": { "compilerOptions": { "module": "es6", "types": ["node"] } },
   "compilerOptions": {
     "outDir": "./dist-ts",
     "module": "ESNext",
-    "moduleResolution": "node",                    
-    "target": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
     "lib": ["esnext", "DOM", "DOM.Iterable", "WebWorker"],
     "alwaysStrict": true,
     "strict": true,
@@ -22,7 +22,8 @@
   },
   "include": [
     "./src/*.ts",
-    "./src/**/*.ts"
-  ],
+    "./src/**/*.ts",
+    ""
+, "src/index.ts", "src/page-notion-api.ts", "src/search-notion-api.ts", "src/user-notion-api.ts"  ],
   "exclude": ["node_modules/", "dist/", "lib/"]
 }
