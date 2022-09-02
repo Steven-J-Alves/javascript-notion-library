@@ -3,7 +3,7 @@ import sinonChai from 'sinon-chai';
 chai.use(sinonChai);
 
 import fetch from 'node-fetch';
-global.fetch = fetch as any
+global.fetch = fetch as any;
 
 import NotionClient from '../src/index';
 
@@ -13,8 +13,6 @@ describe('NotionClient Library', function () {
     expect(notion).to.be.an.instanceof(NotionClient);
   });
 
-
   describe('request method', () => {
-
   });
 });

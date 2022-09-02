@@ -7,7 +7,7 @@
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "run": "node src/out/file.js",
+    "run": "ts-node examples/example.ts",
     "clear": "rimraf lib",
     "prepush": "lint && test:coverage",
     "prepare": "husky install",
