@@ -15,7 +15,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.ts'],
   },
   // plugins: [
   //   new webpack.DefinePlugin({
@@ -25,9 +25,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: 'ts-loader',
       },
     ],
   },

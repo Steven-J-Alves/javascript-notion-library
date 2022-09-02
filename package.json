@@ -7,7 +7,7 @@
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "run": "ts-node examples/example.ts",
+    "start": "TS_NODE_PROJECT='./tsconfig.json' node --loader ts-node/esm ./src/examples/example.ts",
     "clear": "rimraf lib",
     "prepush": "lint && test:coverage",
     "prepare": "husky install",
@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.6.2",
-    "node-fetch": "^3.2.6"
+    "node-fetch": "^3.2.6",
+    "ts-loader": "^9.3.1"
   }
 }

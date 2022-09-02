@@ -1,5 +1,6 @@
-import fetch from 'node-fetch';
-global.fetch = fetch as any;
+// import fetch from 'node-fetch';
+// global.fetch = fetch as any;
+console.log('wddddddddddddd');
 
 import NotionClient from '../index';
 
