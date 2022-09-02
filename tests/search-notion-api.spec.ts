@@ -11,8 +11,8 @@ global.fetch = fetch as any;
 import NotionClient  from '../src/index';
 
 describe('Search', () => {
-  let notion;
-  let stubedFetch;
+  let notion: any;
+  let stubedFetch: any;
   let promise;
 
   beforeEach(() => {
