@@ -19,7 +19,7 @@ describe('Search', () => {
     notion = new NotionClient({ token: 'foo' });
 
     stubedFetch = sinon.stub(global, 'fetch');
-    promise = stubedFetch.resolves({ json: () => ({ album: 'name' }) });
+    promise = stubedFetch.resolves({ json: () => ({ name: 'name' }) });
   })
 
   afterEach(() => {
@@ -49,6 +49,5 @@ describe('Search', () => {
       const globalSearch = notion.search.global('home');
       expect(stubedFetch).to.have.been.calledOnce;
     });
-
   });
 });
