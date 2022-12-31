@@ -2,7 +2,6 @@
   "name": "javascript-notion-library",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "git@github.com:Steven-J-Alves/javascript-notion-library.git",
   "author": "Steven Alves <stevenalves512@gmail.com>",
   "license": "MIT",
@@ -72,7 +71,7 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.6.2",
-    "node-fetch": "^3.2.6",
+    "node-fetch": "^2.6.7",
     "ts-loader": "^9.3.1"
   }
 }

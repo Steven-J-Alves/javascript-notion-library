@@ -1,4 +1,4 @@
-function page(this: any, id: any) {
+function page(this: any) {
   const self = this as any;
   return {
     getPage: (id: any) => self.request(`${self.apiURL}/pages/${id}`),

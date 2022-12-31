@@ -30,7 +30,7 @@ export default class NotionClient  {
     this.apiURL =  options.API_URL || API_URL;
     this.token = options.token;
 
-    this.page = page.bind(this,"")();
+    this.page = page.bind(this)();
     this.search = search.bind(this)();
     this.user = user.bind(this)();
   }
